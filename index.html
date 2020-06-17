@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+	function calculaLapso(tsInicio, tsFin) {
+	  return tsFin - tsInicio;
+	}
+
+	function setInnerH(obj) {
+	  document.getElementById(obj).innerHTML = new Date().getTime(); 
+	}
+
+	function setAmountInInnerH(obj, str) {
+	  document.getElementById(obj).innerHTML = str; 
+	}
+
+	function displayTimeStamp() {
+	  return new Date().getTime();
+	}
+
+	function setTodosInners(obj, obj2, obj3) {
+		str = new Date().getTime(); 
+		setAmountInInnerH(obj, str); 
+		setAmountInInnerH(obj2, str); 
+		setAmountInInnerH(obj3, str); 
+	}
+</script>
+
+
+<h2>My First AUDIO</h2>
+
+
+<p id="demo">DEMO</p>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = new Date().getTime()">
+Click me to PLAY/STOP
+</button>
+<hr>
+
+
+
+</body>
+</html>
