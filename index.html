@@ -3,6 +3,12 @@
 <body>
 
 <script>
+	var a = ["./mp3/int.mp3", "./mp3/min.mp3"]; //new Array(); 
+	function cargaArray(a){
+		document.getElementById('lblCantidadCanciones').innerHTML = a.length; 
+	}
+	
+	
 	function calculaLapso(tsInicio, tsFin) {
 	  return tsFin - tsInicio;
 	}
@@ -28,11 +34,20 @@
 </script>
 
 
-<h2>My First AUDIO</h2>
+<h2>My First AUDIO PLAYER</h2>
 
-<audio src="./mp3/int.mp3" controls autoplay loop>
+<audio src="./mp3/int.mp3" id="aud01" controls autoplay loop>
 <p>Tu navegador no implementa audio</p>
 </audio>
+	
+<hr> 
+
+	<p>Cantidad de canciones: </p>
+	<p id="lblCantidadCanciones">0</p>
+	<script>
+	var a = ["./mp3/int.mp3", "./mp3/min.mp3"]; //new Array(); 
+	cargaArray(a);
+	</script>
 	
 <p id="demo">DEMO</p>
 <button type="button"
