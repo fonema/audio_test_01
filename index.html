@@ -9,57 +9,41 @@
 	function cargaArray(a){
 		document.getElementById('lblCantidadCanciones').innerHTML = a.length; 
 	}
-	
-	function calculaLapso(tsInicio, tsFin) {
-	  return tsFin - tsInicio;
-	}
 
-	function setInnerH(obj) {
-	  document.getElementById(obj).innerHTML = new Date().getTime(); 
-	}
-
-	function setAmountInInnerH(obj, str) {
-	  document.getElementById(obj).innerHTML = str; 
-	}
-
-	function displayTimeStamp() {
-	  return new Date().getTime();
-	}
-
-	function setTodosInners(obj, obj2, obj3) {
-		str = new Date().getTime(); 
-		setAmountInInnerH(obj, str); 
-		setAmountInInnerH(obj2, str); 
-		setAmountInInnerH(obj3, str); 
-	}
-
-	function pararCancion(){
+	function pausarCancion(){
 		var aud = document.getElementById('aud01'); 
-		aud.pause(); 
+		if (aud.paused === true) {
+			aud.play(); 
+		}
+		else {
+			aud.pause(); 
+		}
+	}
+	
+	function detenerCancion(){
+		//var aud = document.getElementById('aud01'); 
+		//aud.pause(); 
+		document.getElementById('aud01').pause();
 	}
 	
 	function siguienteCancion(){
-		//document.getElementById('aud01').stop(); 
-		pararCancion(); 
+		detenerCancion(); 
 		document.getElementById('aud01').src = a[ (((++iCancionActual)) % (a.length)) ]; 
-		//iCancionActual++; 
 		document.getElementById('aud01').play(); 
-		//
 		//document.getElementById('consola').innerHTML = "CA: " + (iCancionActual + 1) + " -- " + "L: " + a.length + " -- Ind: " + (iCancionActual % (a.length)); 
 		iCancionActual = ((iCancionActual) % (a.length));
-		//iCancionActual++; 
 		document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual + 1); // + " -- " + "L: " + a.length + " -- Ind: " + (iCancionActual % (a.length)); 
-		
 	}
 </script>
 
-
 <h2>My First AUDIO PLAYER</h2>
 
-<audio src="./mp3/min.mp3" id="aud01" controls autoplay loop>
+
+<audio src="./mp3/min.mp3" id="aud01" controls loop>
 <p>Tu navegador no implementa audio</p>
 </audio>
 <hr> 
+
 
 <p id="consola"></p>
 <hr>
@@ -68,16 +52,16 @@
 	<p>Cantidad de canciones: </p>
 	<p id="lblCantidadCanciones">0</p>
 	<script>
-	//var a = ["./mp3/min.mp3", "./mp3/int.mp3"]; //new Array(); 
 	cargaArray(a);
 	document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual+1);
 	</script>
 <hr> 	
 
+<button type="button" onclick="pausarCancion()"> PAUSE / PLAY </button>
 <button type="button" onclick="siguienteCancion()"> NEXT >> </button>
-<button type="button" onclick="pararCancion()"> >>STOP<< </button>
-
+<!--
+<button type="button" onclick="detenerCancion()"> >>STOP<< </button>
 <hr>
-
+-->
 </body>
 </html>
