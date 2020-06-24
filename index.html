@@ -33,7 +33,7 @@
 		document.getElementById('aud01').play(); 
 		//document.getElementById('consola').innerHTML = "CA: " + (iCancionActual + 1) + " -- " + "L: " + a.length + " -- Ind: " + (iCancionActual % (a.length)); 
 		iCancionActual = ((iCancionActual) % (a.length));
-		document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual + 1); // + " -- " + "L: " + a.length + " -- Ind: " + (iCancionActual % (a.length)); 
+		document.getElementById('consola').innerHTML = "Current song #: " + (iCancionActual + 1); // + " -- " + "L: " + a.length + " -- Ind: " + (iCancionActual % (a.length)); 
 	}
 	
 	
@@ -43,7 +43,7 @@
 
 
 <audio src="./mp3/min.mp3" id="aud01" controls >
-<p>Tu navegador no implementa audio</p>
+<p>uncompatible browser</p>
 </audio>
 <hr> 
 
@@ -52,11 +52,11 @@
 <hr>
 
 
-	<p>Cantidad de canciones: </p>
+	<p>Total songs: </p>
 	<p id="lblCantidadCanciones">0</p>
 	<script>
 		cargaArray(a);
-		document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual+1);
+		document.getElementById('consola').innerHTML = "Current song #: " + (iCancionActual+1);
 	
 		var aud = document.getElementById('aud01'); 		
 		aud.addEventListener("ended", function(){
@@ -67,7 +67,7 @@
 	</script>
 <hr> 	
 
-<button type="button" onclick="pausarCancion()"> PAUSE / PLAY </button>
+<button type="button" onclick="pausarCancion()"> | PAUSE / PLAY | </button>
 <button type="button" onclick="siguienteCancion()"> NEXT >> </button>
 <!--
 <button type="button" onclick="detenerCancion()"> >>STOP<< </button>
