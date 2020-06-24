@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AUDIO PLAYER</title>
+	<link rel="stylesheet" type="text/css" href="./css/css.css">
+</head>
+
 <body>
 
 <script>
@@ -42,8 +50,8 @@
 <h2>My First AUDIO PLAYER</h2>
 
 
-<audio src="./mp3/min.mp3" id="aud01" controls >
-<p>uncompatible browser</p>
+<audio src="./mp3/min.mp3" id="aud01" class="cAudio" controls >
+<p>- INCOMPATIBLE BROWSER -</p>
 </audio>
 <hr> 
 
@@ -52,13 +60,14 @@
 <hr>
 
 
-	<p>Total songs: </p>
+	Total songs: 
 	<p id="lblCantidadCanciones">0</p>
 	<script>
 		cargaArray(a);
 		document.getElementById('consola').innerHTML = "Current song #: " + (iCancionActual+1);
 	
-		var aud = document.getElementById('aud01'); 		
+		var aud = document.getElementById('aud01'); 	
+		aud.volume=0.5;
 		aud.addEventListener("ended", function(){
 			//alert ("song 'ended' detected"); 
 			siguienteCancion(); 
