@@ -27,7 +27,7 @@
 	}
 	
 	function siguienteCancion(){
-		alert ("NEXT song clicked"); 
+		//alert ("NEXT song clicked"); 
 		detenerCancion(); 
 		document.getElementById('aud01').src = a[ (((++iCancionActual)) % (a.length)) ]; 
 		document.getElementById('aud01').play(); 
@@ -36,14 +36,6 @@
 		document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual + 1); // + " -- " + "L: " + a.length + " -- Ind: " + (iCancionActual % (a.length)); 
 	}
 	
-	var aud = document.getElementById('aud01'); 		
-	aud.addEventListener("ended", function(){
-		//var texto = document.getElementById("texto");
-		//texto.innerHTML = "Fin de la canción";
-		//var aud = document.getElementById('aud01'); 
-		alert ("song 'ended' detected"); 
-		siguienteCancion(); 
-	});
 	
 </script>
 
@@ -63,8 +55,15 @@
 	<p>Cantidad de canciones: </p>
 	<p id="lblCantidadCanciones">0</p>
 	<script>
-	cargaArray(a);
-	document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual+1);
+		cargaArray(a);
+		document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual+1);
+	
+		var aud = document.getElementById('aud01'); 		
+		aud.addEventListener("ended", function(){
+			//alert ("song 'ended' detected"); 
+			siguienteCancion(); 
+		});
+	
 	</script>
 <hr> 	
 
