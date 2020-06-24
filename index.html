@@ -34,6 +34,15 @@
 		iCancionActual = ((iCancionActual) % (a.length));
 		document.getElementById('consola').innerHTML = "Canción Actual: " + (iCancionActual + 1); // + " -- " + "L: " + a.length + " -- Ind: " + (iCancionActual % (a.length)); 
 	}
+	
+	var aud = document.getElementById('aud01'); 		
+	aud.addEventListener("ended", function(){
+		//var texto = document.getElementById("texto");
+		//texto.innerHTML = "Fin de la canción";
+		//var aud = document.getElementById('aud01'); 
+		siguienteCancion(); 
+	});
+	
 </script>
 
 <h2>My First AUDIO PLAYER</h2>
