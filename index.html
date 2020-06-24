@@ -27,6 +27,7 @@
 	}
 	
 	function siguienteCancion(){
+		alert ("NEXT song clicked"); 
 		detenerCancion(); 
 		document.getElementById('aud01').src = a[ (((++iCancionActual)) % (a.length)) ]; 
 		document.getElementById('aud01').play(); 
@@ -40,6 +41,7 @@
 		//var texto = document.getElementById("texto");
 		//texto.innerHTML = "Fin de la canción";
 		//var aud = document.getElementById('aud01'); 
+		alert ("song 'ended' detected"); 
 		siguienteCancion(); 
 	});
 	
