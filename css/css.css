@@ -42,11 +42,9 @@
 	}	  	
 
 	.cAudio {
-	  border: 2px white;
-	  background-color: white;
+	  border: 2px red;
+	  background-color: #ffcc99;
 	  text-align: center;
-		position:fixed;
-		z-index:1000; 
-		width:250px;	  
+		width:350px;	  
 	}	  		
 	
